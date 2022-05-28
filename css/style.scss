@@ -1,0 +1,537 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+@font-face {
+    font-family: 'Rob Graves';
+    src: url('../fonts/Robgraves-lKYV.ttf');
+}
+
+@mixin flex {
+    display: flex;
+    align-items: center;
+}
+
+// Variables
+$white: #ffff;
+$orange: #ff9100;
+$green: #649e34;
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Raleway', sans-serif;
+    color: inherit;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+a {
+    text-decoration: none;
+    font-family: inherit;
+    color: inherit;
+}
+
+body {
+    font-family: 'Rob Graves', cursive;
+    width: 100vw;
+    height: 100vh;
+    color: #777;
+}
+
+.h-app {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem 0.5rem;
+    height: 100%;
+    font-size: 3rem;
+
+    @media screen and (min-width: '940px') {
+        margin: 0 auto;
+        width: 940px;
+    }
+}
+
+main {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.h-icon {
+    fill: gray;
+    width: 2.25rem;
+    height: 2.25rem;
+}
+
+.h-home {
+    position: absolute;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease-in, opacity 0.3s ease-in;
+
+    &__header {
+        height: fit-content;
+    }
+
+    &__links {
+        display: flex;
+        align-items: center;
+        font-size: 2.5rem;
+
+        span {
+            margin-left: 0.25rem;
+            color: rgb(140, 93, 158);
+        }
+    }
+
+    &__link:last-child {
+        margin-left: auto;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+    }
+
+    &__title {
+        font-size: 5rem;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    &__button {
+        display: block;
+        font-weight: 500;
+        font-size: 2rem;
+        margin: 2rem auto;
+        border-radius: 3rem;
+
+        &--primary {
+            padding: 1rem 2rem;
+            color: $white;
+            animation: pulse 1s infinite;
+            font-size: 2rem;
+            box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.2);
+            transition: all 0.2s ease-in;
+            border-radius: 3rem;
+            background-color: $green;
+
+            &:active {
+                background-color: rgb(80, 128, 42);
+            }
+        }
+
+        &--secondary {
+            font-size: 1.5rem;
+            color: #777;
+            transition: color 0.2s ease-in;
+
+            &:active {
+                color: rgb(80, 128, 42);
+            }
+        }
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1.1);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+.h-game {
+    position: absolute;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    width: 100%;
+    transition: transform 0.2s ease-in, opacity 0.3s ease-in;
+
+    &__header {
+        display: flex;
+        width: 100%;
+
+        @media screen and (min-width: 900px) {
+            order: 2;
+            margin: 2rem auto;
+            gap: 2rem;
+            width: fit-content;
+        }
+    }
+
+    &__button {
+        font-size: 1.5rem;
+        font-weight: 500;
+        letter-spacing: 0.02rem;
+        padding: 0.75rem 1.5rem;
+        border-radius: 2rem;
+        box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
+
+        &--primary {
+            color: white;
+            background-color: $green;
+            transition: all 0.2s ease-in;
+
+            &:active {
+                background-color: rgb(80, 128, 42);
+            }
+        }
+
+        &:last-child {
+            margin-left: auto;
+            color: $white;
+            background-color: rgb(255, 0, 55);
+
+            &:active {
+                background-color: rgb(211, 2, 47);
+            }
+        }
+    }
+
+    &__title {
+        display: none;
+
+        @media screen and (min-width: 900px) {
+            display: block;
+            font-size: 5rem;
+            text-align: center;
+            margin-top: 5rem;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    &-board {
+        margin-top: 2rem;
+        position: relative;
+        border: 12px solid transparent;
+        background-color: rgb(45, 71, 45);
+        box-shadow: inset 0px 0px 10px 5px rgba(0, 0, 0, 0.2),
+            2px 2px 10px 2px rgba(0, 0, 0, 0.2);
+        border-image: url('../img/wood-texture.jpg') 10% round;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: #ffff;
+
+        @media screen and (min-width: 900px) {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+    }
+
+    &-info {
+        @media screen and (min-width: 900px) {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            order: 2;
+            height: 100%;
+            font-size: 2.5rem;
+            gap: 4rem;
+        }
+
+        &__correct-letters {
+            display: flex;
+            height: fit-content;
+            justify-content: center;
+            padding: 2rem 0;
+            gap: 0.5rem;
+        }
+
+        &__correct-letter {
+            text-align: center;
+            min-width: 2.25rem;
+            height: 2.5rem;
+            border: 3px solid transparent;
+            border-bottom-color: #ffff;
+        }
+
+        &__wrong-letters {
+            position: absolute;
+            right: 0;
+            top: 9rem;
+            width: 5rem;
+            line-break: auto;
+
+            @media screen and (min-width: 900px) {
+                position: static;
+                height: 30%;
+                width: 85%;
+                margin: 0 auto;
+            }
+        }
+
+        &__wrong-letter {
+            position: relative;
+            display: inline-block;
+            margin: 0.25rem;
+            transition: all 0.2s ease-in;
+
+            &::after {
+                position: absolute;
+                color: rgb(250, 141, 141);
+                left: 0;
+                top: 0;
+                content: '/';
+            }
+        }
+    }
+
+    &__canvas {
+        margin-top: 2rem;
+    }
+
+    .mobile-keyboard {
+        font-size: 3.25rem;
+        font-weight: 600;
+        color: #777;
+        padding: 0.5rem;
+        border-radius: 5px;
+        background-color: #f7f7f7;
+
+        @media screen and (min-width: 900px) {
+            display: none;
+        }
+
+        &__keys {
+            display: flex;
+            width: fit-content;
+            margin: 0 auto;
+        }
+
+        &__key {
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: background 0.1s ease-in;
+
+            &:active {
+                background-color: hsla(93, 50%, 41%, 0.2);
+                color: $green;
+            }
+
+            &:disabled {
+                color: rgb(250, 141, 141);
+                cursor: default;
+                background: none;
+            }
+        }
+    }
+}
+
+.h-add-word {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease-in, opacity 0.3s ease-in;
+
+    &__header {
+        height: fit-content;
+    }
+
+    &__title {
+        margin: 2rem 0;
+        text-align: center;
+        font-size: 2.5rem;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        height: 75vh;
+        gap: 1rem;
+    }
+
+    &__input-container {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        gap: 0.5rem;
+        padding: 0.25rem;
+    }
+
+    &__helper-message {
+        font-size: 1rem;
+        display: flex;
+        gap: 0.25rem;
+        align-items: center;
+        font-weight: 600;
+        font-family: 'Raleway', Courier, monospace;
+    }
+
+    &__new-word {
+        font-family: 'Raleway', Courier, monospace;
+        font-size: 1.5rem;
+        border: none;
+        flex: 1;
+        padding: 0.5rem;
+        resize: none;
+        border-radius: 4px;
+        border: 1px solid #649e34;
+        outline: 5px solid transparent;
+        transition: 0.2s ease-in;
+
+        &:focus {
+            outline-color: #649e3471;
+        }
+
+        &::placeholder {
+            text-transform: none;
+        }
+    }
+
+    &__icon {
+        height: 1.25rem;
+        width: 1.25rem;
+        font-weight: 600;
+    }
+
+    &__buttons {
+        display: flex;
+
+        @media screen and (min-width: 900px) {
+            width: 50%;
+        }
+    }
+
+    &__button {
+        padding: 1rem;
+        font-weight: 500;
+        flex: 1;
+        font-size: 1.5rem;
+        border-radius: 3rem;
+
+        &--primary {
+            background-color: $green;
+            color: $white;
+            box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
+        }
+    }
+}
+
+.modal {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    backdrop-filter: blur(3px);
+    background-color: rgba(99, 157, 52, 0.1);
+    transition: all 0.2s ease-in;
+
+    &__container {
+        width: 90%;
+        padding: 2rem;
+        background-color: $white;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px 5px rgba(7, 80, 4, 0.09);
+
+        @media screen and (min-width: 900px) {
+            width: 400px;
+        }
+    }
+
+    &__title {
+        font-size: 3rem;
+        margin: 1rem 0;
+        text-align: center;
+
+        &--defeat {
+            color: rgb(243, 53, 94);
+        }
+
+        &--win {
+            color: $green;
+        }
+    }
+
+    &__text {
+        font-family: 'Raleway', Courier, monospace;
+        font-size: 1.25rem;
+        font-weight: 500;
+        text-align: center;
+
+        span {
+            display: block;
+            margin: 2rem 0;
+            font-size: 1.5rem;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        margin: 2rem 0 0 0;
+    }
+
+    &__button {
+        flex: 1;
+        padding: 1rem;
+        font-weight: 600;
+        border-radius: 3rem;
+
+        &--new-game {
+            background-color: $green;
+            color: $white;
+            box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
+            animation: pulse 1s infinite;
+            transition: all 0.2s ease-in;
+
+            &:active {
+                background-color: rgb(80, 128, 42);
+            }
+        }
+    }
+}
+
+.hidden {
+    pointer-events: none;
+    visibility: hidden;
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.alert-text {
+    color: red;
+    fill: red;
+}
+
+.hidden-wrong-letter {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.hidden-modal {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+}

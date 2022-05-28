@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./css/reset.css" />
+        <link rel="stylesheet" href="./css/style.css" />
+        <title>Jogo da forca</title>
+    </head>
+    <body>
+        <div class="h-app">
+            <main>
+                <section class="h-home">
+                    <header class="h-home__header">
+                        <nav class="h-home__links">
+                            <a
+                                class="h-home__link"
+                                href="https://www.oracle.com/br/education/oracle-next-education/"
+                                >ONE</a
+                            >
+                            <span>+</span>
+                            <a
+                                class="h-home__link"
+                                href="https://www.alura.com.br/"
+                            >
+                                <svg
+                                    class="h-icon h-icon--alura"
+                                    viewBox="0 0 31 48"
+                                    width="24"
+                                    height="24"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        fill-rule="evenodd"
+                                        clip-rule="evenodd"
+                                        d="M22.9051 23.7291C22.8625 23.9968 22.7589 24.2516 22.602 24.4743C22.4451 24.6971 22.2389 24.8821 21.9989 25.0154C21.5157 25.3221 21.0928 25.4755 20.6649 25.6289C19.7537 25.9381 18.7947 26.2472 17.7804 26.6059C16.7106 26.9646 15.7516 27.3233 14.8958 27.583C13.8286 27.9417 12.8142 28.2509 11.8502 28.6095C11.1249 28.9145 10.4437 29.3121 9.82401 29.7919C9.2477 30.305 8.74475 30.8925 8.32888 31.5382C7.90099 32.2556 7.63166 33.1807 7.63166 34.2592C7.63166 36.4186 8.16528 38.0611 9.23502 39.0876C10.3022 40.1686 12.2806 40.6806 15.213 40.6806C18.2032 40.6806 20.232 40.1166 21.3042 38.9862C22.3689 37.8558 22.9025 36.2653 22.9025 34.2122V23.7291H22.9051ZM15.2155 0.972168C20.4509 0.972168 24.2945 1.94923 26.7486 3.95284C29.2052 5.90697 30.4335 8.42013 30.4335 11.3983V36.7773C30.4335 37.8038 30.2221 38.9343 29.8496 40.1661C29.472 41.4029 28.727 42.5309 27.5515 43.5549C26.4314 44.5864 24.8835 45.4596 22.9076 46.1274C20.9317 46.7953 18.3694 47.154 15.218 47.154C12.0717 47.154 9.50434 46.7953 7.53098 46.1274C5.55762 45.4596 4.00713 44.5864 2.88704 43.5549C1.84507 42.6321 1.05572 41.4669 0.591504 40.1661C0.213948 38.9367 0 37.8063 0 36.7798V32.7231C0 30.5637 0.58647 28.56 1.76193 26.8112C2.93739 25.0154 4.59108 23.7836 6.72805 23.0118C7.79527 22.6531 9.02359 22.2945 10.4105 21.8319C11.7999 21.3669 13.0785 20.9043 14.3622 20.4962C15.6459 20.0831 16.766 19.67 17.725 19.3088C18.3037 19.0813 18.8915 18.8766 19.4869 18.6954L20.4484 18.2328C20.826 18.0275 21.196 17.7183 21.571 17.3077C21.9436 16.8996 22.2632 16.437 22.5325 15.9225C22.8171 15.3654 22.9637 14.7501 22.9604 14.1267V12.4818C22.9644 11.8789 22.8356 11.2823 22.5829 10.7329C22.3714 10.1145 21.9436 9.55056 21.3571 9.03853C20.7706 8.52402 19.9677 8.11341 19.0087 7.80173C18.0472 7.49748 16.7685 7.34165 15.3237 7.34165C12.3335 7.34165 10.3576 7.91057 9.29039 9.088C8.38426 10.117 7.85065 11.4008 7.74493 12.838C7.74493 13.1471 7.47812 13.3525 7.15594 13.3525L0.644362 13.4563C0.489685 13.457 0.341003 13.3976 0.23069 13.291C0.120376 13.1845 0.057365 13.0394 0.0553749 12.8874V11.4033C0.0553749 9.96117 0.324698 8.62544 0.911168 7.34165C1.50016 6.05538 2.40881 4.97937 3.63461 4.05178C4.86292 3.12913 6.46627 2.35985 8.38678 1.84534C10.2569 1.22695 12.5525 0.972168 15.2205 0.972168H15.2155Z"
+                                    />
+                                </svg>
+                            </a>
+
+                            <a
+                                class="h-home__link"
+                                href="https://github.com/drkcode"
+                            >
+                                <svg
+                                    class="h-icon h-icon--github"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                                    />
+                                </svg>
+                            </a>
+                        </nav>
+                    </header>
+                    <div class="h-home__content">
+                        <h1 class="h-home__title">Hangman Game</h1>
+
+                        <div class="h-home__buttons">
+                            <button
+                                id="home-newgame-btn"
+                                class="h-home__button h-home__button--primary"
+                            >
+                                Novo jogo
+                            </button>
+                            <button
+                                id="home-addword-btn"
+                                class="h-home__button h-home__button--secondary"
+                            >
+                                Adicionar palavra
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <section class="h-game hidden">
+                    <header class="h-game__header">
+                        <button
+                            id="game-new-btn"
+                            class="h-game__button h-game__button--primary"
+                        >
+                            Novo jogo
+                        </button>
+                        <button
+                            id="game-giveup-btn"
+                            class="h-game__button h-game__button--secondary"
+                        >
+                            Desistir
+                        </button>
+                    </header>
+                    <div class="h-game__content">
+                        <h2 class="h-game__title">Hangman Game</h2>
+                        <div class="h-game-board">
+                            <div class="h-game-info">
+                                <ul class="h-game-info__correct-letters"></ul>
+                                <ul class="h-game-info__wrong-letters">
+                                    <li
+                                        class="h-game-info__wrong-letter hidden-wrong-letter"
+                                    >
+                                        H
+                                    </li>
+                                    <li
+                                        class="h-game-info__wrong-letter hidden-wrong-letter"
+                                    ></li>
+                                    <li
+                                        class="h-game-info__wrong-letter hidden-wrong-letter"
+                                    ></li>
+                                    <li
+                                        class="h-game-info__wrong-letter hidden-wrong-letter"
+                                    ></li>
+                                    <li
+                                        class="h-game-info__wrong-letter hidden-wrong-letter"
+                                    ></li>
+                                    <li
+                                        class="h-game-info__wrong-letter hidden-wrong-letter"
+                                    ></li>
+                                    <li
+                                        class="h-game-info__wrong-letter hidden-wrong-letter"
+                                    ></li>
+                                    <li
+                                        class="h-game-info__wrong-letter hidden-wrong-letter"
+                                    ></li>
+                                    <li
+                                        class="h-game-info__wrong-letter hidden-wrong-letter"
+                                    ></li>
+                                </ul>
+                            </div>
+                            <canvas
+                                class="h-game__canvas"
+                                id="canvas"
+                                width="330px"
+                                height="280px"
+                            ></canvas>
+                        </div>
+                        <div class="mobile-keyboard">
+                            <ul class="mobile-keyboard__keys">
+                                <li>
+                                    <button
+                                        class="mobile-keyboard__key"
+                                        data-key="Q"
+                                    >
+                                        Q
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                        class="mobile-keyboard__key"
+                                        data-key="W"
+                                    >
+                                        W
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                        class="mobile-keyboard__key"
+                                        data-key="E"
+                                    >
+                                        E
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                        class="mobile-keyboard__key"
+                                        data-key="R"
+                                    >
+                                        R
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                        class="mobile-keyboard__key"
+                                        data-key="T"
+                                    >
+                                        T
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                        class="mobile-keyboard__key"
+                                        data-key="Y"
+                                    >
+                                        Y
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                        class="mobile-keyboard__key"
+                                        data-key="U"
+                                    >
+                                        U
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                        class="mobile-keyboard__key"
+                                        data-key="I"
+                                    >
+                                        I
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                        class="mobile-keyboard__key"
+                                        data-key="O"
+                                    >
+                                        O
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                        class="mobile-keyboard__key"
+                                        data-key="P"
+                                    >
+                                        P
+                                    </button>
+                                </li>
+                            </ul>
+                            <ul class="mobile-keyboard__keys">
+                                <li>
+                                    <button
+                                        class="mobile-keyboard__key"
+                                        data-key="A"
+                                    >
+                                        A
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                        class="mobile-keyboard__key"
+                                        data-key="S"
+                                    >
+                                        S
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                        class="mobile-keyboard__key"
+                                        data-key="D"
+                                    >
+                                        D
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                        class="mobile-keyboard__key"
+                                        data-key="F"
+                                    >
+                                        F
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                        class="mobile-keyboard__key"
+                                        data-key="G"
+                                    >
+                                        G
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                        class="mobile-keyboard__key"
+                                        data-key="H"
+                                    >
+                                        H
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                        class="mobile-keyboard__key"
+                                        data-key="J"
+                                    >
+                                        J
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                        class="mobile-keyboard__key"
+                                        data-key="K"
+                                    >
+                                        K
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                        class="mobile-keyboard__key"
+                                        data-key="L"
+                                    >
+                                        L
+                                    </button>
+                                </li>
+                            </ul>
+                            <ul class="mobile-keyboard__keys">
+                                <li>
+                                    <button
+                                        class="mobile-keyboard__key"
+                                        data-key="Z"
+                                    >
+                                        Z
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                        class="mobile-keyboard__key"
+                                        data-key="X"
+                                    >
+                                        X
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                        class="mobile-keyboard__key"
+                                        data-key="C"
+                                    >
+                                        C
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                        class="mobile-keyboard__key"
+                                        data-key="V"
+                                    >
+                                        V
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                        class="mobile-keyboard__key"
+                                        data-key="B"
+                                    >
+                                        B
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                        class="mobile-keyboard__key"
+                                        data-key="N"
+                                    >
+                                        N
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                        class="mobile-keyboard__key"
+                                        data-key="M"
+                                    >
+                                        M
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section class="h-add-word hidden">
+                    <header class="h-add-word__header">
+                        <h2 class="h-add-word__title">Nova palavra</h2>
+                    </header>
+                    <div class="h-add-word__content">
+                        <div class="h-add-word__input-container">
+                            <strong class="h-add-word__helper-message">
+                                <svg
+                                    class="h-add-word__icon"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="h-6 w-6"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                                    />
+                                </svg>
+
+                                Máximo de 8 letras, maiúsculas, sem acentos e
+                                sem caracteres especiais
+                            </strong>
+                            <textarea
+                                id="addword-input"
+                                class="h-add-word__new-word"
+                                placeholder="Digite a nova palvara"
+                                autocomplete="off"
+                                maxlength="8"
+                                spellcheck="false"
+                            ></textarea>
+                        </div>
+
+                        <div class="h-add-word__buttons">
+                            <button
+                                id="addword-save-btn"
+                                class="h-add-word__button h-add-word__button--primary"
+                            >
+                                Salvar e jogar
+                            </button>
+                            <button
+                                id="addword-cancel-btn"
+                                class="h-add-word__button h-add-word__button--secondary"
+                            >
+                                Cancelar
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <div id="modal-defeat" class="modal hidden-modal">
+                    <div class="modal__container">
+                        <h3 class="modal__title modal__title--defeat">
+                            Que pena!
+                        </h3>
+                        <p class="modal__text">
+                            Você não acertou a palavra.<br />
+                            <span>Tentar novamente?</span>
+                        </p>
+                        <div class="modal__buttons">
+                            <button
+                                class="modal__button modal__button--new-game"
+                            >
+                                Novo jogo
+                            </button>
+                            <button class="modal__button modal__button--exit">
+                                Sair
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div id="modal-win" class="modal hidden-modal">
+                    <div class="modal__container">
+                        <h3 class="modal__title modal__title--win">
+                            Parabens!
+                        </h3>
+                        <p class="modal__text">
+                            Você acertou todas as letras!
+                            <span>Jogar novamente?</span>
+                        </p>
+                        <div class="modal__buttons">
+                            <button
+                                class="modal__button modal__button--new-game"
+                            >
+                                Novo jogo
+                            </button>
+                            <button class="modal__button modal__button--exit">
+                                Sair
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <script src="./js/canvas.js"></script>
+        <script src="./js/game-dom.js"></script>
+        <script src="./js/draw-word.js"></script>
+        <script src="./js/mobile-play.js"></script>
+        <script src="./js/desktop-play.js"></script>
+        <script src="./js/buttons.js"></script>
+        <script src="./js/navigation.js"></script>
+        <script src="./js/local-storage.js"></script>
+        <script src="./js/add-word.js"></script>
+        <script src="./js/endgame-messages.js"></script>
+        <script src="./js/game.js"></script>
+    </body>
+</html>

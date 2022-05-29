@@ -11,8 +11,11 @@ function verifyKeypress(key) {
 }
 
 window.addEventListener('keydown', (event) => {
-    const letter = verifyKeypress(event.key);
+    if (gameSection.classList.contains('hidden')) {
+        return;
+    }
 
+    const letter = verifyKeypress(event.key);
     if (!letter) return;
 
     play(letter);

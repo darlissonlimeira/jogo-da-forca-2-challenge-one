@@ -2,13 +2,13 @@
 
 ## Sprint 02 - Jogo da Forca
 
--   [Abrir o app]()
+- :link: [Abrir o app]()
 
 ### Recursos
 
--   [Heroicons](https://heroicons.com/)
--   [Border image](https://www.pexels.com/pt-br/@fwstudio-33348/)
--   [Rob Graves Font](https://www.fontspace.com/rob-graves-font-f7477)
+- :link: [Heroicons](https://heroicons.com/)
+- :link: [Border image](https://www.pexels.com/pt-br/@fwstudio-33348/)
+- :link: [Rob Graves Font](https://www.fontspace.com/rob-graves-font-f7477)
 
 ### Sobre o desafio
 

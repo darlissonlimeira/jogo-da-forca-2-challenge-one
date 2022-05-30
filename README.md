@@ -2,7 +2,7 @@
 
 ## Sprint 02 - Jogo da Forca
 
-- :link: [Abrir o app]()
+- :link: [Abrir o app](https://drkcode.github.io/jogo-da-forca-2-challenge-one/)
 
 ### Recursos
 

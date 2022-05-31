@@ -3,11 +3,11 @@ function verifyKeypress(key) {
         return;
     }
 
-    if (key.match(/[^A-Z]/)) {
+    if (key.match(/[^a-zA-Z]/)) {
         return;
     }
 
-    return key;
+    return key.toUpperCase();
 }
 
 window.addEventListener('keydown', (event) => {

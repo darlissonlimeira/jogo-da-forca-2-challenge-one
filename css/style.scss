@@ -1,8 +1,16 @@
 :root {
-    font-size: 62.5%;
+    // font-size: 62.5%;
 
     @media screen and (min-width: 900px) {
         // font-size: 55%;
+    }
+}
+
+html {
+    font-size: 62.5%;
+
+    @media screen and (min-width: 900px) {
+        font-size: 55%;
     }
 }
 
@@ -47,7 +55,8 @@ body {
     font-family: 'Rob Graves', cursive;
     width: 100vw;
     height: 100vh;
-    color: #777;
+    color: #555;
+    background-color: #fefefe;
 }
 
 .h-app {
@@ -70,7 +79,7 @@ main {
 }
 
 .h-icon {
-    fill: #808080;
+    fill: #555;
     width: 3rem;
     height: 3rem;
 }
@@ -82,6 +91,7 @@ main {
     height: 100%;
     display: flex;
     flex-direction: column;
+    gap: 7rem;
     transition: transform 0.2s ease-in, opacity 0.3s ease-in;
 
     &__header {
@@ -95,8 +105,17 @@ main {
 
         span {
             margin-left: 0.25rem;
-            color: rgb(140, 93, 158);
+            font-family: Georgia, 'Times New Roman', Times, serif;
         }
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+    }
+
+    &__link:first-child {
+        font-family: Georgia, 'Times New Roman', Times, serif;
     }
 
     &__link:last-child {
@@ -108,7 +127,16 @@ main {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        flex: 1;
+        padding: 7rem 0;
+
+        border: 12px solid transparent;
+        color: #ffff;
+        background-color: rgb(45, 71, 45);
+        box-shadow: inset 0px 0px 10px 5px rgba(0, 0, 0, 0.2),
+            2px 2px 10px 2px rgba(0, 0, 0, 0.2);
+        border-image: url('../img/wood-texture.jpg') 10% round;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
     &__title {
@@ -119,7 +147,8 @@ main {
 
     &__button {
         display: block;
-        font-weight: 500;
+        font-weight: 600;
+        letter-spacing: 0.03rem;
         margin: 3rem auto;
         border-radius: 3rem;
 
@@ -131,20 +160,21 @@ main {
             box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.2);
             transition: all 0.2s ease-in;
             border-radius: 4rem;
-            background-color: $green;
+            color: #333;
+            background-color: #ffe162;
 
             &:active {
-                background-color: rgb(80, 128, 42);
+                background-color: hsl(49, 80%, 60%);
             }
         }
 
         &--secondary {
             font-size: 2rem;
-            color: #777;
+            color: $white;
             transition: color 0.2s ease-in;
 
             &:active {
-                color: rgb(80, 128, 42);
+                color: rgb(124, 167, 90);
             }
         }
     }
@@ -234,13 +264,13 @@ main {
         margin-top: 2rem;
         position: relative;
         border: 12px solid transparent;
+        color: #ffff;
         background-color: rgb(45, 71, 45);
         box-shadow: inset 0px 0px 10px 5px rgba(0, 0, 0, 0.2),
             2px 2px 10px 2px rgba(0, 0, 0, 0.2);
         border-image: url('../img/wood-texture.jpg') 10% round;
         background-repeat: no-repeat;
         background-size: cover;
-        color: #ffff;
 
         @media screen and (min-width: 900px) {
             display: flex;
@@ -436,7 +466,6 @@ main {
     }
 
     &__button {
-        // padding: 2rem 1.75rem;
         padding: 1.5rem;
         border-radius: 4rem;
         font-weight: 500;
@@ -445,8 +474,13 @@ main {
 
         &--primary {
             background-color: $green;
-            color: $white;
             box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
+            color: $white;
+            transition: all 0.2s ease-in;
+
+            &:active {
+                background-color: rgb(80, 128, 42);
+            }
         }
     }
 }

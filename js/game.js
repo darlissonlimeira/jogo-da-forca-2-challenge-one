@@ -1,10 +1,15 @@
 const WORDS = ['ALURA', 'DESAFIO', 'ORACLE', 'HTML', 'JAVA', 'ONE'];
 
-let lastWord;
-let currentWord;
-let pressedLetters = [];
-let errorCounter = 0;
-let hits = 0;
+const errorSound = new Audio('../sounds/error.wav');
+const hitSound = new Audio('../sounds/hit.wav');
+const winSound = new Audio('../sounds/win.wav');
+const defeatSound = new Audio('../sounds/defeat.wav');
+
+let lastWord; // guarda a ultima palavra sorteada para evitar repetiçoes seguidas
+let currentWord; // guarda a palavra sorteada
+let pressedLetters = []; // guarda as letras que já foram pressionadas
+let errorCounter = 0; // conta o numero de erros
+let hits = 0; // conta o numero de acertos
 
 function showCorrectLetters(word, letter) {
     for (const [i, l] of [...word].entries()) {
@@ -47,18 +52,25 @@ function play(letter) {
         const drawPiece = gamePieces[errorCounter];
         drawPiece();
 
+        errorSound.currentTime = 0;
+        errorSound.play();
+
         errorCounter++;
 
         if (errorCounter === 9) {
             setTimeout(() => showDefeatModal(), 300);
+            defeatSound.play();
         }
 
         return;
     }
 
     showCorrectLetters(currentWord, letter);
+    hitSound.currentTime = 0;
+    hitSound.play();
 
     if (hits === currentWord.length) {
         setTimeout(() => showWinModal(), 300);
+        winSound.play();
     }
 }

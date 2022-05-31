@@ -1,9 +1,9 @@
 const WORDS = ['ALURA', 'DESAFIO', 'ORACLE', 'HTML', 'JAVA', 'ONE'];
 
-const errorSound = new Audio('../sounds/error.wav');
-const hitSound = new Audio('../sounds/hit.wav');
-const winSound = new Audio('../sounds/win.wav');
-const defeatSound = new Audio('../sounds/defeat.wav');
+const errorSound = new Audio('./sounds/error.wav');
+const hitSound = new Audio('./sounds/hit.wav');
+const winSound = new Audio('./sounds/win.wav');
+const defeatSound = new Audio('./sounds/defeat.wav');
 
 let lastWord; // guarda a ultima palavra sorteada para evitar repetiçoes seguidas
 let currentWord; // guarda a palavra sorteada

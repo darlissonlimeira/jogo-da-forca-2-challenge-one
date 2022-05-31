@@ -16,7 +16,10 @@ window.addEventListener('keydown', (event) => {
     }
 
     const letter = verifyKeypress(event.key);
-    if (!letter) return;
+
+    if (!letter) {
+        return;
+    }
 
     play(letter);
 });

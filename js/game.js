@@ -66,6 +66,7 @@ function play(letter) {
     }
 
     showCorrectLetters(currentWord, letter);
+
     hitSound.currentTime = 0;
     hitSound.play();
 

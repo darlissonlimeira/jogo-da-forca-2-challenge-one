@@ -23,9 +23,9 @@ function saveWord() {
 }
 
 function validateWord(word) {
-    const wordIsValide = word.match(/[^A-Z]/);
+    const wordIsInvalide = word.match(/[^A-Z]/);
 
-    if (wordIsValide) {
+    if (wordIsInvalide) {
         return;
     }
 

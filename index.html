@@ -459,10 +459,18 @@
                     </div>
                 </div>
             </main>
-            <audio id="hit-sound" src="./sounds/hit.wav"></audio>
-            <audio id="error-sound" src="./sounds/error.wav"></audio>
-            <audio id="win-sound" src="./sounds/win.wav"></audio>
-            <audio id="defeat-sound" src="./sounds/defeat.wav"></audio>
+            <audio id="hit-sound" preload="none" src="./sounds/hit.wav"></audio>
+            <audio
+                id="error-sound"
+                preload="none"
+                src="./sounds/error.wav"
+            ></audio>
+            <audio id="win-sound" preload="none" src="./sounds/win.wav"></audio>
+            <audio
+                id="defeat-sound"
+                preload="none"
+                src="./sounds/defeat.wav"
+            ></audio>
         </div>
         <script src="./js/canvas.js"></script>
         <script src="./js/local-storage.js"></script>

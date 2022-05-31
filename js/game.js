@@ -20,7 +20,7 @@ function showCorrectLetters(word, letter) {
     }
 }
 
-function clearCurrentGameData() {
+function cleanCurrentGameData() {
     hits = 0;
     errorCounter = 0;
     pressedLetters = [];
@@ -29,14 +29,15 @@ function clearCurrentGameData() {
 function startNewGame() {
     currentWord = selectWord();
 
-    clearCorrectLetters();
+    cleanCorrectLetters();
     createLettersSpace(currentWord);
-    clearWrongLetters();
-    hideEndGameModal();
-    clearCurrentGameData();
-    clearDisabledLetterButtons();
+    cleanWrongLetters();
+    cleanCurrentGameData();
+    cleanDisabledLetterButtons();
 
-    clearCanvas();
+    hideEndGameModal();
+
+    cleanCanvas();
 }
 
 function play(letter) {

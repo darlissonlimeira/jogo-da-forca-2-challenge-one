@@ -189,7 +189,7 @@ const drawLeftLeg = () => {
     drawLeg(200, 165, 199.9, 167, 215);
 };
 
-const clearCanvas = () => {
+const cleanCanvas = () => {
     ctx.clearRect(0, 0, 330, 280);
     drawHLine(30, 270, 32, 270, 320);
 };

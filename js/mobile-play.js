@@ -4,7 +4,7 @@ function disableLetterButton(btn) {
     btn.disabled = true;
 }
 
-function clearDisabledLetterButtons() {
+function cleanDisabledLetterButtons() {
     virtualButtons.forEach((btn) => {
         btn.disabled = false;
     });

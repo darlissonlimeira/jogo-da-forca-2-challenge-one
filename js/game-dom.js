@@ -1,4 +1,4 @@
-function clearCorrectLetters() {
+function cleanCorrectLetters() {
     const letterSpaces = document.querySelectorAll('.letter-space');
 
     for (const el of letterSpaces) {
@@ -19,7 +19,7 @@ function createLettersSpace() {
     wordSpace.innerHTML = nodes;
 }
 
-function clearWrongLetters() {
+function cleanWrongLetters() {
     const wrongLetters = document.querySelectorAll(
         '.h-game-info__wrong-letter'
     );

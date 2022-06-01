@@ -10,7 +10,7 @@ function saveWord() {
     const word = wordInput.value.trim();
     const isValidWord = validateWord(word);
 
-    if (!word || !isValidWord) {
+    if (!word || !isValidWord || word.length > 8) {
         helpMessage.classList.add('alert-text');
         return;
     }
